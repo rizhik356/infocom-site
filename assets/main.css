@@ -1,0 +1,1049 @@
+:root {
+    --primary-color: #e5e7eb;
+    --primary-bg: #0b0f1a;
+    --container_pd: 2rem;
+    --active-color: #ff6b3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+
+body {
+    background: var(--primary-bg);
+    color:var(--primary-color);
+    font-family: "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI", "Helvetica", "Apple Color Emoji", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.btn {
+    background: var(--active-color);
+    padding: 12px 20px;
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s ease;
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left { transform: translateX(-10vw); }
+.right { transform: translateX(10vw); }
+
+.animate.show.left,
+.animate.show.right {
+    transform: translateX(0);
+}
+
+.main {
+    width: 100%;
+    background-image: url("/assets/img/main-img.png");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 2rem;
+}
+
+.href {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.header_container {
+    padding: 1.5rem var(--container_pd);
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    position: sticky;
+    background-color: transparent;
+}
+
+.header_menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.header_menu a:hover {
+    transition: color 0.6s ease;
+    color: var(--active-color);
+}
+
+.main_info_container {
+    padding: 0 var(--container_pd);
+    text-transform: uppercase;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main_info_container .info {
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-40vw);
+    animation: textIn 1s ease forwards;
+}
+
+.main_info_container .info h1 {
+    font-size: 2.5rem;
+}
+
+.counting_container {
+    padding: 0 var(--container_pd) 2rem;
+}
+
+.counting_container .counting {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.counting_container .counting .card .counter_info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.counting_container .counting .card   {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.counting_container .counting .card h3  {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.counting_container .counting .card .counter_info p {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.counting_container .counting .card .icon {
+    width: 40px;
+    height: 40px;
+    stroke: var(--active-color);
+    fill: transparent;
+}
+
+.counting_container .animate_counting {
+    opacity: 0;
+    animation: textIn 1s ease forwards;
+}
+
+.counting_container .left {
+    transform: translateX(-40vw);
+}
+.counting_container .right {
+    transform: translateX(40vw);
+}
+
+.projects {
+    padding: 5rem var(--container_pd);
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+    font-weight: 700;
+
+}
+
+.projects h2::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--active-color);
+    border-radius: 2px;
+}
+
+.projects .carousel .carousel_container {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    flex: 1;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--active-color) rgba(255, 255, 255, 0.1);
+}
+
+.carousel  {
+    position: relative;
+    display: flex;
+ //   align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+
+.projects .carousel .card_img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    height: 300px;
+    width: 400px;
+    flex-shrink: 0;
+    border: 1px solid var(--primary-color);
+    transition: color 0.6s ease;
+}
+
+.img_1 {
+    background-image: url("/assets/img/1-project.png");
+}
+
+.img_2 {
+    background-image: url("/assets/img/2-project.png");
+}
+.img_3 {
+    background-image: url("/assets/img/3-project.png");
+}
+.img_4 {
+    background-image: url("/assets/img/4-project.png");
+}
+.img_5 {
+    background-image: url("/assets/img/5-project.png");
+}
+
+.projects .carousel .carousel_card:hover .card_img {
+    border-color: var(--active-color);
+}
+
+.projects .carousel .carousel_card p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary-color);
+    text-align: center;
+    transition: color 0.6s ease;
+}
+
+.projects .carousel .carousel_card article  {
+    text-align: center;
+}
+
+.projects .carousel .carousel_card:hover p {
+    color: var(--active-color);
+}
+
+.projects .carousel_container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.projects .carousel_container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.projects .carousel_container::-webkit-scrollbar-thumb {
+    background: var(--active-color);
+    border-radius: 10px;
+}
+
+.projects .carousel_container::-webkit-scrollbar-thumb:hover {
+    background: #ff8a5c;
+}
+
+.carousel-btn {
+    background: rgba(255, 107, 61, 0.2);
+    border: 1px solid var(--active-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--active-color);
+    backdrop-filter: blur(5px);
+    flex-shrink: 0;
+    margin-top: calc(300px / 2 - 48px / 2);
+}
+
+.carousel-btn:hover {
+    background: var(--active-color);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+.about {
+    padding: 4rem var(--container_pd);
+    background: linear-gradient(135deg, rgba(11, 15, 26, 0.95) 0%, rgba(11, 15, 26, 0.98) 100%);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--active-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.about article {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--primary-color);
+    text-align: justify;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 61, 0.1);
+}
+
+/* Общие стили для всех секций */
+.specialization,
+.projects-section,
+.scientific-section,
+.it-projects {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.specialization:hover,
+.projects-section:hover,
+.scientific-section:hover,
+.it-projects:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+/* Заголовки секций */
+.specialization h3,
+.projects-section h3,
+.scientific-section h3,
+.it-projects h3 {
+    font-size: 1.8rem;
+    color: var(--active-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.specialization h3::after,
+.projects-section h3::after,
+.scientific-section h3::after,
+.it-projects h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--active-color);
+    border-radius: 2px;
+}
+
+/* Список специализации */
+.specialization-list {
+    list-style: none;
+    padding: 0;
+}
+
+.specialization-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+.specialization-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--active-color);
+    font-size: 1rem;
+}
+
+/* Теги проектов */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tag {
+    background: rgba(255, 107, 61, 0.1);
+    border: 1px solid rgba(255, 107, 61, 0.3);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tag:hover {
+    background: rgba(255, 107, 61, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--active-color);
+}
+
+.scientific-highlight {
+    background: rgba(255, 107, 61, 0.2);
+    border-color: var(--active-color);
+    font-weight: 500;
+}
+
+/* Сетка ИТ-проектов */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--active-color);
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--active-color);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.contact {
+    padding: 4rem var(--container_pd);
+    background: linear-gradient(135deg, rgba(11, 15, 26, 0.98) 0%, rgba(11, 15, 26, 0.95) 100%);
+    position: relative;
+    margin-top: 2rem;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--active-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 61, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+    border-color: rgba(255, 107, 61, 0.3);
+}
+
+.contact-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 107, 61, 0.1);
+    border-radius: 16px;
+    color: var(--active-color);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: var(--active-color);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+}
+
+.contact-details {
+    flex: 1;
+}
+
+.contact-details.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-details h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--active-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-link {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    color: var(--active-color);
+}
+
+.contact-address {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.contact-details-extended {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 107, 61, 0.1);
+}
+
+.legal-info h3 {
+    font-size: 1.2rem;
+    color: var(--active-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.legal-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legal-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.legal-label {
+    font-size: 0.9rem;
+    color: rgba(229, 231, 235, 0.7);
+    font-weight: 500;
+}
+
+.legal-value {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@keyframes textIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Адаптивность для планшетов и мобильных устройств */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
+    .projects .carousel .card_img {
+        width: 350px;
+        height: 260px;
+    }
+
+    .carousel-btn {
+        margin-top: calc(260px / 2 - 48px / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Общие отступы */
+    :root {
+        --container_pd: 1.5rem;
+    }
+
+    /* Шапка */
+    .header_container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header_menu {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Главный блок */
+    .main_info_container .info h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Счетчики */
+    .counting_container .counting {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .counting_container .counting .card {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .counting_container .counting .card h3 {
+        font-size: 1.8rem;
+    }
+
+    .counting_container .counting .card .counter_info p {
+        font-size: 0.85rem;
+    }
+
+    .counting_container .counting .card .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Проекты */
+    .projects {
+        padding: 3rem var(--container_pd);
+    }
+
+    .projects h2 {
+        position: relative;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .carousel {
+        gap: 0.5rem;
+    }
+
+    .projects .carousel .carousel_container {
+        gap: 1rem;
+    }
+
+    .projects .carousel .card_img {
+        width: 280px;
+        height: 210px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        margin-top: calc(210px / 2 - 40px / 2);
+    }
+
+    .carousel-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .projects .carousel .carousel_card p {
+        font-size: 0.85rem;
+    }
+
+    /* О нас */
+    .about {
+        padding: 3rem var(--container_pd) 0 var(--container_pd);
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .about article {
+        font-size: 1rem;
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Секции специализации и проектов */
+    .specialization,
+    .projects-section,
+    .scientific-section,
+    .it-projects {
+        padding: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .specialization h3,
+    .projects-section h3,
+    .scientific-section h3,
+    .it-projects h3 {
+        font-size: 1.5rem;
+    }
+
+    .specialization-list li {
+        font-size: 0.9rem;
+        padding-left: 1.2rem;
+    }
+
+    /* Теги */
+    .tag {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    /* Сетка проектов */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .project-card {
+        padding: 0.8rem 1rem;
+    }
+
+    .project-name {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.85rem;
+    }
+
+    /* Контакты */
+    .contact {
+        padding: 3rem var(--container_pd);
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contact-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .contact-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-details h3 {
+        font-size: 0.85rem;
+    }
+
+    .contact-link {
+        font-size: 1rem;
+    }
+
+    .contact-address {
+        font-size: 0.9rem;
+    }
+
+    .legal-info h3 {
+        font-size: 1rem;
+    }
+
+    .legal-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .legal-label,
+    .legal-value {
+        font-size: 0.85rem;
+    }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 480px) {
+    /* Еще меньше отступы */
+    :root {
+        --container_pd: 1rem;
+    }
+
+    /* Шапка */
+    .logo_container {
+        gap: 0.5rem;
+    }
+
+    .logo {
+        height: 1.5rem;
+    }
+
+    .header_menu {
+        gap: 0.8rem;
+    }
+
+    .href {
+        font-size: 0.8rem;
+    }
+
+    /* Главный блок */
+    .main_info_container .info h1 {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+
+    /* Счетчики */
+    .counting_container .counting {
+        gap: 1.5rem;
+    }
+
+    .counting_container .counting .card h3 {
+        font-size: 1.5rem;
+    }
+
+    .counting_container .counting .card .counter_info p {
+        font-size: 0.75rem;
+    }
+
+    .counting_container .counting .card .icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Проекты */
+    .projects h2 {
+        font-size: 1.5rem;
+    }
+
+    .projects .carousel .card_img {
+        width: 275px;
+        height: 180px;
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        margin-top: calc(180px / 2 - 32px / 2);
+    }
+
+    .carousel-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .projects .carousel .carousel_card p {
+        font-size: 0.75rem;
+    }
+
+    /* О нас */
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about article {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+    }
+
+    /* Секции */
+    .specialization h3,
+    .projects-section h3,
+    .scientific-section h3,
+    .it-projects h3 {
+        font-size: 1.2rem;
+    }
+
+    .specialization-list li {
+        font-size: 0.8rem;
+    }
+
+    .tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    /* Контакты */
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-link {
+        font-size: 0.9rem;
+    }
+
+    .legal-item {
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 360px) {
+    .projects .carousel .card_img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .carousel-btn {
+        margin-top: calc(150px / 2 - 32px / 2);
+    }
+
+    .header_menu {
+        gap: 0.5rem;
+    }
+
+    .href {
+        font-size: 0.7rem;
+    }
+}
+
+/* Альбомная ориентация на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .main {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .counting_container .counting {
+        flex-wrap: wrap;
+    }
+
+    .projects .carousel .card_img {
+        height: 180px;
+        width: 260px;
+    }
+
+    .carousel-btn {
+        margin-top: calc(180px / 2 - 40px / 2);
+    }
+}
+
