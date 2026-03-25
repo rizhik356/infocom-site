@@ -17,12 +17,16 @@ html {
 
 body {
     background: var(--primary-bg);
+    width: 100%;
     color:var(--primary-color);
     font-family: "ui-sans-serif", "-apple-system", "system-ui", "Segoe UI", "Helvetica", "Apple Color Emoji", "Arial", "sans-serif", "Segoe UI Emoji", "Segoe UI Symbol";
     padding: 0;
     margin: 0;
     overflow-x: hidden;
-    max-width: 100%;
+}
+
+.global_container {
+    width: 100%;
 }
 
 .btn {
@@ -38,20 +42,20 @@ body {
 .animate {
     opacity: 0;
     transform: translateY(40px);
-    transition: 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.left {
+    transform: translateY(40px) translateX(-40px);
+}
+
+.right {
+    transform: translateY(40px) translateX(40px);
 }
 
 .animate.show {
     opacity: 1;
-    transform: translateY(0);
-}
-
-.left { transform: translateX(-10vw); }
-.right { transform: translateX(10vw); }
-
-.animate.show.left,
-.animate.show.right {
-    transform: translateX(0);
+    transform: translateY(0) translateX(0);
 }
 
 .main {
@@ -72,7 +76,7 @@ body {
 }
 
 .logo {
-    height: 2rem;
+    height: 3.5rem;
 }
 
 .href {
@@ -252,7 +256,7 @@ body {
 
 .projects .carousel .carousel_card p {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.4;
     color: var(--primary-color);
@@ -262,6 +266,8 @@ body {
 
 .projects .carousel .carousel_card article  {
     text-align: center;
+    max-width: 400px;
+    line-height: 1.4;
 }
 
 .projects .carousel .carousel_card:hover p {
@@ -325,6 +331,7 @@ body {
     background-clip: text;
     letter-spacing: 2px;
     font-weight: 700;
+    position: relative;
 }
 
 .about h2::after {
@@ -340,42 +347,40 @@ body {
 }
 
 .about article {
-    font-size: 1.1rem;
     line-height: 1.8;
     color: var(--primary-color);
-    text-align: justify;
+    text-align: left;
     margin-bottom: 3rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 107, 61, 0.1);
+    width: 70%;
 }
 
 /* Общие стили для всех секций */
 .specialization,
 .projects-section,
-.scientific-section,
-.it-projects {
-    margin-bottom: 3rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    transition: all 0.3s ease;
+.scientific-section {
+    text-align: left;
+    width: 70%;
+    margin-bottom: 7rem;
+    transition: all 0.6s ease;
 }
 
-.specialization:hover,
-.projects-section:hover,
-.scientific-section:hover,
-.it-projects:hover {
-    background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-3px);
+.specialization {
+    margin-left: auto;
+}
+
+.projects-section {
+    margin-right: auto;
+}
+
+.scientific-section {
+    margin-left: auto;
 }
 
 /* Заголовки секций */
 .specialization h3,
 .projects-section h3,
-.scientific-section h3,
-.it-projects h3 {
+.it-projects h3,
+.scientific-section h3 {
     font-size: 1.8rem;
     color: var(--active-color);
     margin-bottom: 1.5rem;
@@ -385,8 +390,8 @@ body {
 
 .specialization h3::after,
 .projects-section h3::after,
-.scientific-section h3::after,
-.it-projects h3::after {
+.it-projects h3::after,
+.scientific-section h3::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -397,51 +402,142 @@ body {
     border-radius: 2px;
 }
 
-/* Список специализации */
+/* Стили для элементов списка */
 .specialization-list {
     list-style: none;
     padding: 0;
 }
 
-.specialization-list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    color: var(--primary-color);
+.spec-item {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
 }
 
-.specialization-list li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
+.spec-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.spec-icon {
     color: var(--active-color);
     font-size: 1rem;
+    line-height: 1.8;
+    flex-shrink: 0;
 }
 
-/* Теги проектов */
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.tag {
-    background: rgba(255, 107, 61, 0.1);
-    border: 1px solid rgba(255, 107, 61, 0.3);
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    font-size: 0.95rem;
+.spec-title {
+    flex: 1;
+    line-height: 1.8;
     color: var(--primary-color);
-    transition: all 0.3s ease;
-    cursor: default;
+    font-weight: 500;
 }
 
-.tag:hover {
-    background: rgba(255, 107, 61, 0.2);
-    transform: translateY(-2px);
-    border-color: var(--active-color);
+/* Кнопка-переключатель */
+.spec-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    flex-shrink: 0;
+    color: var(--active-color);
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.spec-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.spec-item.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.spec-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, margin 0.3s ease;
+    margin-left: 2.25rem;
+    border-radius: 12px;
+    margin-top: 0;
+}
+
+.spec-item.active .spec-description {
+    max-height: 500px;
+}
+
+.spec-description p {
+    padding: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .specialization,
+    .projects-section,
+    .scientific-section {
+        width: 85%;
+    }
+}
+
+@media (max-width: 768px) {
+    .specialization,
+    .projects-section,
+    .scientific-section {
+        width: 100%;
+    }
+
+    .spec-description {
+        margin-left: 1.5rem;
+    }
+
+    .spec-title {
+        font-size: 0.95rem;
+    }
+
+    .spec-description p {
+        font-size: 0.9rem;
+        padding: 0.75rem 0.75rem 0.75rem 0;
+    }
+}
+
+/* Стили для скроллбара (опционально) */
+.spec-description {
+    scrollbar-width: thin;
+    scrollbar-color: var(--active-color) rgba(255, 255, 255, 0.1);
+}
+
+.spec-description::-webkit-scrollbar {
+    width: 4px;
+}
+
+.spec-description::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.spec-description::-webkit-scrollbar-thumb {
+    background: var(--active-color);
+    border-radius: 4px;
+}
+
+/* Анимация для активного состояния */
+.spec-item.active {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
 
 .scientific-highlight {
     background: rgba(255, 107, 61, 0.2);
@@ -512,30 +608,23 @@ body {
     height: 3px;
     background: var(--active-color);
     border-radius: 3px;
-    transition: width 0.3s ease;
+    transition: width 0.6s ease;
 }
 
 .contact-container {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.contact-card {
+.contact-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.5rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 107, 61, 0.1);
-    transition: all 0.3s ease;
 }
 
 .contact-card:hover {
@@ -545,8 +634,8 @@ body {
 }
 
 .contact-icon {
-    width: 56px;
-    height: 56px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -583,7 +672,7 @@ body {
 }
 
 .contact-link {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
@@ -596,7 +685,6 @@ body {
 
 .contact-address {
     font-size: 1rem;
-    line-height: 1.5;
     color: var(--primary-color);
     margin: 0;
 }
@@ -609,7 +697,7 @@ body {
 }
 
 .legal-info h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--active-color);
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -630,16 +718,13 @@ body {
 }
 
 .legal-label {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgba(229, 231, 235, 0.7);
-    font-weight: 500;
 }
 
 .legal-value {
     font-size: 1rem;
     color: var(--primary-color);
-    font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 @keyframes textIn {
@@ -767,6 +852,7 @@ body {
         font-size: 1rem;
         padding: 1rem;
         margin-bottom: 2rem;
+        width: 100%;
     }
 
     /* Секции специализации и проектов */
@@ -960,8 +1046,10 @@ footer {
     }
 
     .about article {
-        font-size: 0.85rem;
+        font-size: 1rem;
         padding: 0.8rem;
+        text-align: center;
+        width: 100%;
     }
 
     /* Секции */
@@ -974,11 +1062,6 @@ footer {
 
     .specialization-list li {
         font-size: 0.8rem;
-    }
-
-    .tag {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
     }
 
     /* Контакты */
@@ -1046,4 +1129,26 @@ footer {
         margin-top: calc(180px / 2 - 40px / 2);
     }
 }
+
+@media (min-width: 1440px) {
+    .global_container {
+        width: 1500px;
+    }
+}
+
+/* Для 2K экранов (2560px) - можно немного увеличить */
+@media (min-width: 1920px) {
+    .global_container {
+        width: 1600px;
+    }
+}
+
+/* Для 4K экранов (3840px) */
+@media (min-width: 2560px) {
+    .global_container {
+        width: 1700px;
+    }
+}
+
+
 

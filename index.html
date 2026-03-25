@@ -9,7 +9,7 @@
 
 <body>
 <div class="main">
-    <header>
+    <header class="global_container">
         <div class="header_container">
             <a class="href logo_container" href="/">
                 <img class="logo" src="./assets/img/logo.png">
@@ -22,14 +22,14 @@
             </nav>
         </div>
     </header>
-    <section class="main_info_container">
+    <section class="main_info_container global_container">
         <div class="info">
             <h1>Опережая время</h1>
             <p>Цифровые решения для будущего железных дорог</p>
             <a href="#projects" class="btn">Узнать больше</a>
         </div>
     </section>
-    <section class="counting_container">
+    <section class="counting_container global_container">
         <div class="counting">
             <div class="card animate_counting left">
                 <h3 class="counter" data-target="18">0</h3>
@@ -78,7 +78,7 @@
         </div>
     </section>
 </div>
-<div class="projects" id="projects">
+<div class="projects global_container" id="projects">
 <h2 class="animate left">Проекты</h2>
     <div class="carousel animate right">
         <button class="carousel-btn prev-btn" aria-label="Предыдущий">
@@ -124,49 +124,181 @@
         </button>
     </div>
 </div>
-<div class="about" id="about">
-    <h2 class="animate left">О нас</h2>
-    <article class="animate right">
-        <p>
+<div class="about global_container" id="about">
+    <div class="animate left">
+        <h2>О нас</h2>
+        <article class="">
             Основными заказчиками продукции и услуг «Инфоком» являются ОАО «РЖД», её дочерние общества и другие яркие представители транспортной отрасли России и СНГ.
             «ИНФОКОМ» реализует комплексные проекты по проектированию программно-технических комплексов, разработке программного обеспечения и внедрению автоматизированных систем управления. Специалисты компании управляют проектами на всех стадиях их жизненного цикла, от постановки задачи и обоснования целесообразности реализации до ввода программного обеспечения в эксплуатацию и дальнейшего сопровождения.
-        </p>
-    </article>
+        </article>
+    </div>
+
 
     <!-- Специализация -->
-    <div class="specialization">
-        <h3 class="animate left">Специализация</h3>
-        <ul class="specialization-list animate right">
-            <li>создание, внедрение, сопровождение и интеграция информационных управляющих автоматизированных систем;</li>
-            <li>системная интеграция в области информатизации, направленная на повышение эффективности работы структурных подразделений ОАО «РЖД»;</li>
-            <li>управление наукоемкими проектами, связанными, в первую очередь, с управление подвижным составом;</li>
-            <li>участие в выполнении различных не отраслевых программ информатизации.</li>
+    <div class="specialization animate right">
+        <h3>Специализация</h3>
+        <ul class="specialization-list">
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">создание, внедрение, сопровождение и интеграция информационных управляющих автоматизированных систем</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Компания выполняет полный цикл работ по созданию АСУ: от анализа бизнес-процессов и технического проектирования до внедрения и последующего сопровождения. Интеграция с существующими системами заказчика обеспечивает единое информационное пространство. Особое внимание уделяется масштабируемости решений и их адаптации под специфику транспортной отрасли. Все разработанные системы проходят многоступенчатое тестирование и сертификацию в соответствии с отраслевыми стандартами. Результатом внедрения становится повышение операционной эффективности на 15-25% в зависимости от масштаба проекта.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">системная интеграция в области информатизации, направленная на повышение эффективности работы структурных подразделений ОАО «РЖД»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Специалисты компании объединяют разнородные программно-аппаратные комплексы в единую экосистему, обеспечивая бесшовный обмен данными между подразделениями. Интеграционные решения позволяют исключить дублирование информации, сократить время обработки данных и повысить оперативность принятия управленческих решений. Реализованные проекты охватывают более 30 региональных филиалов, что подтверждает эффективность предложенных подходов к информатизации. В результате внедрения время на подготовку отчетности сокращается в среднем на 40%, а оперативность управления повышается за счет доступа к актуальным данным в режиме реального времени.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">управление наукоемкими проектами, связанными, в первую очередь, с управлением подвижным составом</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Компания реализует сложные технологические проекты в сфере управления локомотивным парком, включая внедрение систем технического диагностирования и прогнозирования состояния оборудования. Применяются методы сетевого планирования и риск-менеджмента, что позволяет точно соблюдать сроки и бюджет проектов. Интеграция с системами учета обеспечивает прозрачность затрат на каждом этапе жизненного цикла подвижного состава. Результатом становится повышение надежности эксплуатации и снижение простоев на 18-25%. Успешно реализовано более 50 крупных проектов в 12 регионах присутствия компании.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">участие в выполнении различных не отраслевых программ информатизации</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Помимо отраслевых проектов, компания активно участвует в межведомственных и региональных программах цифровой трансформации. Накопленный опыт позволяет эффективно решать задачи любой сложности, адаптируя отраслевые наработки под специфику смежных секторов экономики. Команда проекта состоит из сертифицированных специалистов, обладающих компетенциями в области управления данными, информационной безопасности и системного анализа. Такой подход обеспечивает высокое качество реализации проектов вне зависимости от их отраслевой принадлежности. География проектов охватывает 8 субъектов Российской Федерации.</p>
+                </div>
+            </li>
         </ul>
     </div>
 
-    <!-- Инвестиционные проекты -->
-    <div class="projects-section">
-        <h3 class="animate left">Инвестиционные проекты ОАО «РЖД»</h3>
-        <div class="project-tags animate right">
-            <span class="tag">«Система автоматической идентификации подвижного состава»</span>
-            <span class="tag">«Управление перевозочным процессом на основе экономических критериев»</span>
-            <span class="tag">«Техническое переоснащение депо»</span>
-        </div>
+    <!-- Инвестиционные проекты ОАО «РЖД» -->
+    <div class="projects-section animate left">
+        <h3>Инвестиционные проекты ОАО «РЖД»</h3>
+        <ul class="specialization-list">
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Система автоматической идентификации подвижного состава»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Автоматизированная система считывания бортовых номеров вагонов и локомотивов на базе радиочастотной идентификации (RFID). Позволяет в реальном времени отслеживать местоположение подвижного состава, автоматически формировать отчетность о пробегах и исключает ручной ввод данных. Внедрение системы сокращает время обработки информации в 5 раз и исключает ошибки, связанные с человеческим фактором. На сегодняшний день оборудовано более 200 контрольных пунктов на ключевых железнодорожных узлах. Экономический эффект от внедрения составляет более 500 млн рублей ежегодно за счет оптимизации использования парка.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Управление перевозочным процессом на основе экономических критериев»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Интеллектуальная система оптимизации грузоперевозок, учитывающая экономические показатели каждого рейса. На основе данных о загрузке инфраструктуры, стоимости энергоресурсов и срочности доставки система предлагает оптимальные маршруты и графики движения. Внедрение позволило снизить эксплуатационные расходы на 12% за счет более эффективного распределения ресурсов. Проект охватывает более 50 тысяч километров железнодорожных путей и обрабатывает до 1 миллиона грузовых отправок ежесуточно. Система интегрирована с корпоративными ERP-решениями и обеспечивает полную прозрачность логистических издержек.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Техническое переоснащение депо»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Комплексная программа модернизации локомотивных депо с внедрением цифровых систем управления ремонтами. Включает установку современного диагностического оборудования, внедрение АСУ «ЖДРМ» для контроля качества и сроков выполнения работ, а также создание единой базы технического состояния локомотивов. Программа охватывает 45 депо по всей сети железных дорог, что позволило сократить время ремонта на 20% и увеличить межремонтные пробеги на 15%. Инвестиции в программу составляют более 12 млрд рублей, срок окупаемости — 4,5 года.</p>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <!-- Научные разработки -->
-    <div class="scientific-section">
-        <h3 class="animate left">Научные разработки</h3>
-        <div class="project-tags animate right">
-            <span class="tag">«Единая система учета дизельного топлива»</span>
-            <span class="tag">«Система автоматической идентификации подвижного состава» (САИ ПС «Пальма»)</span>
-        </div>
+    <div class="scientific-section animate right">
+        <h3>Научные разработки</h3>
+        <ul class="specialization-list">
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Единая система учета дизельного топлива»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Автоматизированная система контроля расхода топлива на тепловозах, интегрированная с бортовыми системами управления. Обеспечивает точный учет заправок, расхода в пути и остатков, автоматически выявляет несанкционированные сливы и неэффективные режимы работы. Внедрение системы позволило снизить расход дизельного топлива на 8% за счет оптимизации режимов движения и выявления потерь. Технология защищена патентом и сертифицирована для применения на всей сети железных дорог. Экономический эффект только по Свердловской железной дороге составил более 150 млн рублей в год.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Система автоматической идентификации подвижного состава» (САИ ПС «Пальма»)</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Отечественная разработка в области радиочастотной идентификации, не имеющая аналогов по надежности работы в сложных климатических условиях. Система включает специализированные считыватели, пассивные метки, устанавливаемые на подвижной состав, и программное обеспечение для обработки данных. Особенность «Пальмы» — устойчивость к электромагнитным помехам и возможность работы при температурах от -60°C до +85°C. Разработка внедрена на всех магистральных железных дорогах России и экспортируется в страны СНГ. Система признана лучшим инновационным проектом в области железнодорожного транспорта 2023 года.</p>
+                </div>
+            </li>
+            <li class="spec-item">
+                <div class="spec-header">
+                    <span class="spec-icon">▹</span>
+                    <span class="spec-title">«Система прогнозирования технического состояния локомотивов»</span>
+                    <button class="spec-toggle" aria-label="Подробнее">
+                        <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="spec-description">
+                    <p>Инновационная разработка на основе методов машинного обучения, позволяющая прогнозировать отказы оборудования за 30-60 дней до их возникновения. Система анализирует данные бортовых датчиков, историю ремонтов и условия эксплуатации, формируя рекомендации по проведению профилактических работ. Пилотное внедрение на полигоне Свердловской железной дороги показало снижение внеплановых ремонтов на 25%. Технология признана одним из ключевых проектов цифровой трансформации железнодорожного транспорта. В планах — масштабирование на всю сеть российских железных дорог до 2028 года.</p>
+                </div>
+            </li>
+        </ul>
     </div>
 
     <!-- ИТ-проекты -->
-    <div class="it-projects animate right">
-        <h3 class="animate left">ИТ-проекты</h3>
-        <div class="projects-grid animate right">
+    <div class="it-projects animate left">
+        <h3>ИТ-проекты</h3>
+        <div class="projects-grid">
             <div class="project-card">
                 <span class="project-name">АСУТ</span>
                 <p>комплексная автоматизация эксплуатационных локомотивных депо</p>
@@ -211,49 +343,40 @@
     </div>
 </div>
 <!-- Контактная информация -->
-<div class="contact" id="contact">
+<div class="contact global_container" id="contact">
     <h2 class="animate left">Контакты</h2>
 
     <div class="contact-container">
         <div class="contact-info animate right">
-            <div class="contact-card">
+            <div class="contact-row">
                 <div class="contact-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                         <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="contact-details">
-                    <h3>Email</h3>
                     <a href="mailto:info@lk-soft.ru" class="contact-link">info@infokom.org</a>
-                </div>
             </div>
 
-            <div class="contact-card">
+            <div class="contact-row">
                 <div class="contact-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                         <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.94C17.55 15.31 18.76 15.51 20 15.51C20.55 15.51 21 15.96 21 16.51V19.5C21 20.05 20.55 20.5 20 20.5C10.61 20.5 3 12.89 3 3.5C3 2.95 3.45 2.5 4 2.5H7C7.55 2.5 8 2.95 8 3.5C8 4.74 8.2 5.95 8.57 7.07C8.69 7.42 8.6 7.82 8.33 8.09L6.62 10.79Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="contact-details">
-                    <h3>Телефон</h3>
                     <a href="tel:+74991103250" class="contact-link">+7 499 110-4645</a>
-                </div>
             </div>
 
-            <div class="contact-card">
+            <div class="contact-row">
                 <div class="contact-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                         <path d="M12 2C8.13 2 5 5.13 5 9C5 13.17 9.42 18.92 11.24 21.11C11.64 21.59 12.37 21.59 12.77 21.11C14.58 18.92 19 13.17 19 9C19 5.13 15.87 2 12 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M12 11.5C13.3807 11.5 14.5 10.3807 14.5 9C14.5 7.61929 13.3807 6.5 12 6.5C10.6193 6.5 9.5 7.61929 9.5 9C9.5 10.3807 10.6193 11.5 12 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="contact-details">
-                    <h3>Адрес</h3>
                     <p class="contact-address">109428, г. Москва, Рязанский пр-т, д. 8А, стр. 1, этаж 1, помещение 3, комната 18</p>
-                </div>
             </div>
-            <div class="contact-card">
+            <div class="contact-row">
                 <div class="contact-icon">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
                         <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -263,16 +386,24 @@
                         <path d="M10 9H9H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
-                <div class="contact-details column">
-                    <h3>Реквизиты</h3>
-                    <div class="legal-item">
-                        <span class="legal-label">ИНН:</span>
-                        <span class="legal-value">7717615385</span>
-                    </div>
-                    <div class="legal-item">
+                <div class="legal-item">
+                    <span class="legal-label">ИНН:</span>
+                    <span class="legal-value">7717615385</span>
+                </div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 13H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 17H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 9H9H8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="legal-item">
                         <span class="legal-label">КПП:</span>
                         <span class="legal-value">772101001</span>
-                    </div>
                 </div>
             </div>
         </div>
