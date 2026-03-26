@@ -134,4 +134,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    const observerStacks = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.width = `${entry.target.getAttribute('data-target')}%`;
+                }, 100);
+            }
+        })
+    })
+
+    document.querySelectorAll('.progress-fill').forEach(el => {
+        observerStacks.observe(el);
+    });
 });
