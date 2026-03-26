@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateCounter(counter) {
         const target = +counter.getAttribute('data-target');
         let current = 0;
-        const steps = 60;
+        const steps = 90;
         const step = target / steps;
 
         function update() {
@@ -146,5 +146,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.progress-fill').forEach(el => {
         observerStacks.observe(el);
+    });
+
+    const moreButtons = document.querySelectorAll('.more-btn');
+
+    moreButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.carousel_card');
+            card.classList.toggle('active');
+            btn.textContent = card.classList.contains('active') ? 'Скрыть' : 'Подробнее';
+        });
+    });
+
+    document.querySelectorAll('.carousel_card').forEach(item => {
+        const header = item.querySelector('.carousel_card_header');
+
+        const toggleItem = () => {
+            item.classList.toggle('active');
+        };
+
+        header.addEventListener('click', (e) => {
+            // Если кликнули на кнопку-переключатель
+            if (e.target.closest('.spec-toggle')) {
+                toggleItem();
+            } else {
+                // Если кликнули на любую другую часть заголовка
+                toggleItem();
+            }
+        });
+
+        // Поддержка клавиатуры
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleItem();
+            }
+        });
     });
 });

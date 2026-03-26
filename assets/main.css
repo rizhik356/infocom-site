@@ -255,21 +255,140 @@ body {
     border-color: var(--active-color);
 }
 
-.projects .carousel .carousel_card p {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--primary-color);
-    text-align: center;
-    transition: color 0.6s ease;
-}
 
 .projects .carousel .carousel_card article  {
-    text-align: center;
-    max-width: 400px;
-    line-height: 1.4;
+    text-align: justify; /* лучше читается */
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 0.5rem;
+    color: var(--primary-color);
 }
+
+.carousel_card {
+    position: relative;
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_img {
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--primary-color);
+    transition: border-color 0.3s ease;
+}
+
+.carousel_card:hover .card_img {
+    border-color: var(--active-color);
+}
+
+.carousel_card p {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.carousel_card_header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.carousel_text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    text-align: justify;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+.carousel_card.active .carousel_text {
+    max-height: fit-content; /* регулируй по размеру текста */
+    padding: 0.5rem 0;
+}
+
+
+.carousel_card {
+    position: relative;
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.card_header {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.card_header p {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.toggle-btn {
+    background: var(--active-color);
+    border: none;
+    color: var(--primary-bg);
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background: #ff8a5c;
+    transform: scale(1.1);
+}
+
+.carousel_text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    width: 90%;
+    text-align: justify;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+.carousel_card.active .carousel_text {
+    max-height: 500px;
+    padding: 0.5rem 0;
+}
+
+.carousel_card.active .toggle-btn {
+    transform: rotate(45deg);
+}
+
+
 
 .projects .carousel .carousel_card:hover p {
     color: var(--active-color);
@@ -556,7 +675,6 @@ body {
     margin-left: auto;
     padding: 0 var(--container_pd);
     background: var(--primary-bg);
-    font-family: Arial, sans-serif;
     color: var(--primary-color);
 }
 .tech-stack__item {
